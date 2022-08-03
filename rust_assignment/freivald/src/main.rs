@@ -1,15 +1,28 @@
 // TODO: Import necessary libraries. Check cargo.toml and the documentation of the libraries.
+use rand::Rng;
+use ark_bls12_381::fq::Fq;
+
 struct Freivald {
-    x: // Array/Vec of Fq,
+    x: <Vec<Fq> // Array/Vec of Fq,
 }
 
 impl Freivald {
     // TODO: Create constructor for object
     fn new(array_size: usize) -> Self {
-        todo!()
+        // todo!()
         // Generate random number
+        let mut rng = rand::thread_rng();
+        let r: Fq = rng.gen();
         // Populate vector with values r^i for i=0..matrix_size
+        let mut vector: Vec<Fq> = Vec::new();
+        for i in 0..array_size {
+            let l = r.pow(i);
+            vector.push();
+        }
         // Return freivald value with this vector as its x value
+        Self {
+            x: Vec<Fq>::from(vector)
+        }
     }
 
     // TODO: Add proper types to input matrices. Remember matrices should hold Fq values
